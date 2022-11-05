@@ -1,19 +1,42 @@
 {{ define "main" }}
-  <h1>Mangas</h1>
-  <ul>
-    {{ range .Pages }}
-      <li>
-        <div class="manga">
-          
-          {{ .Title }}
-          Rate: {{ .Params.Rate}} 
-          Chapter : {{.Params.Chapter}} 
-          Manga-State: {{.Params.Manga_State}}
-          Reading-State: {{.Params.Reading_State}}
-          {{/*  {{ .Date.Format "January 2, 2006" }}  */}}
-          <a href="{{ .Permalink }}"> MORE </a>
-        </div>
-      </li>
-    {{ end }}
-  </ul>
+  <div class="manga_list">
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <div class="manga">
+
+            {{/*  {{ $img_url := .Params.img}}
+            {{ $image := resources.Get "images/{{ $img_url }}" }}  */}}
+            {{ $img_url := .Params.img}}
+            {{ $image := (printf "%s%s" "assets/images/" $img_url)}}
+
+            {{ if os.FileExists $image }}
+              <div class="image">
+                {{ $image := resources.Get "images/manga.jpg" }}
+                <img src="{{ $image.RelPermalink }}" alt="Author avatar" >
+              </div>
+              {{/*  {{ $img := $image.Fit "160x160" }}
+              <img alt="Yellow Duck" src="{{ $img.RelPermalink }}" />  */}}
+
+              {{/*  <img src="{{ $image.RelPermalink }}" alt="Author avatar" width="90" height="90">  */}}
+            {{else}}
+              <div class="image">
+                {{ $image := resources.Get "images/no_image.jpg" }}
+                <img src="{{ $image.RelPermalink }}" alt="Author avatar" >
+              </div>
+            {{ end }}
+
+              <div class="manga_info">
+                <p class="title">{{ .Title }}</p>
+                <p>Rate: {{ .Params.Rate}} </p>
+                <p>Chapter : {{.Params.Chapter}} </p>
+                <p>MState: {{.Params.Manga_State}}</p>
+                <p>RState: {{.Params.Reading_State}}</p>
+                {{/*  {{ .Date.Format "January 2, 2006" }}  */}}
+              </div>
+          </div>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
 {{ end }}
