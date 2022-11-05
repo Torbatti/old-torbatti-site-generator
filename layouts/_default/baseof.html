@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+
+      {{ partial "meta.html" . }}
+      
+  </head>
+
+  <body>
+
+    {{ partial "nav.html" }}
+
+    <div class="container">
+      {{ block "main" . }}
+      {{ end }}
+    </div>
+
+  </body>
+</html>

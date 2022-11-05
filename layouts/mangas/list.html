@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <h1>Mangas</h1>
+  <ul>
+    {{ range .Pages }}
+      <li>
+        <div class="manga">
+          
+          {{ .Title }}
+          Rate: {{ .Params.Rate}} 
+          Chapter : {{.Params.Chapter}} 
+          Manga-State: {{.Params.Manga_State}}
+          Reading-State: {{.Params.Reading_State}}
+          {{/*  {{ .Date.Format "January 2, 2006" }}  */}}
+          <a href="{{ .Permalink }}"> MORE </a>
+        </div>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}
