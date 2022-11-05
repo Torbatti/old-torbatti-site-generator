@@ -5,20 +5,14 @@
         <li>
           <div class="manga">
 
-            {{/*  {{ $img_url := .Params.img}}
-            {{ $image := resources.Get "images/{{ $img_url }}" }}  */}}
+
             {{ $img_url := .Params.img}}
             {{ $image := (printf "%s%s" "assets/images/" $img_url)}}
-
             {{ if os.FileExists $image }}
               <div class="image">
                 {{ $image := resources.Get "images/manga.jpg" }}
                 <img src="{{ $image.RelPermalink }}" alt="Author avatar" >
               </div>
-              {{/*  {{ $img := $image.Fit "160x160" }}
-              <img alt="Yellow Duck" src="{{ $img.RelPermalink }}" />  */}}
-
-              {{/*  <img src="{{ $image.RelPermalink }}" alt="Author avatar" width="90" height="90">  */}}
             {{else}}
               <div class="image">
                 {{ $image := resources.Get "images/no_image.jpg" }}
