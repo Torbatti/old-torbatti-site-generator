@@ -167,8 +167,9 @@ header{
         }
 }
 .posts{
+    margin-top: 20px;
     .post{
-        margin-top: 10px;
+        margin-bottom: 15px;
         padding: 8px 0;
         border-left: 2px solid $fifth_color;
         .post_release_date{
@@ -193,8 +194,9 @@ header{
 }
 
 
-
-
+// Temporarily FIX FOR SMALL SCREENS
+@media only screen and (max-width: 1024px) {
+}
 
 
 @media only screen and (min-width: 0px) {
