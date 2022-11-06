@@ -1,10 +1,22 @@
 {{ define "main" }}
-  <h1>My posts</h1>
-  <ul>
-    {{ range .Pages }}
-      <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date.Format "January 2, 2006" }}
-      </li>
-    {{ end }}
-  </ul>
+  <div class="posts">
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <div class="post">
+            <div class="post_release_date">
+              -{{ .Date.Format "January 2, 2006" }}
+            </div>
+            <div class="post_title">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </div>
+            <div class="post_summary">
+              <p>{{.Summary}} <a href="{{ .Permalink }}">Full Article</a></p>
+              
+            </div>
+          </div>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
 {{ end }}
