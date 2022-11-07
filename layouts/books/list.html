@@ -1,9 +1,9 @@
 {{ define "main" }}
-  <div class="manga_list">
+  <div class="books_list">
     <ul>
       {{ range .Pages }}
         <li>
-          <div class="manga">
+          <div class="book">
 
 
             {{ $img_url := .Params.img}}
@@ -20,11 +20,11 @@
               </div>
             {{ end }}
 
-              <div class="manga_info">
+              <div class="book_info">
                 <p class="title">{{ .Title }}</p>
                 <p>Rate: {{ .Params.Rate}} </p>
                 <p>Chapter : {{.Params.Chapter}} </p>
-                <p>MState: {{.Params.Manga_State}}</p>
+                <p>MState: {{.Params.Book_State}}</p>
                 <p>RState: {{.Params.Reading_State}}</p>
                 {{/*  {{ .Date.Format "January 2, 2006" }}  */}}
               </div>

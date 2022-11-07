@@ -1,0 +1,51 @@
+// Variables
+$first_color: #fdf7f2;
+$second_color:#94B49F;
+$third_color:#DF7861;
+$fourth_color:#354259;
+$fifth_color: #576F72;
+
+//‌Imports
+
+//Styles
+.links_page{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: space-between;
+    .links_section{        
+        a{
+            p{            
+                width: 110px;
+                height: 80px;
+                border-left: 2px solid $fifth_color;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            color: $fifth_color;
+            text-decoration: none;
+            :hover{
+                background-color: $second_color;
+                color: $first_color;
+            }
+        }
+    }
+}
+
+
+//Media Queries
+@media only screen and (min-width: 0px) {
+}
+@media only screen and (min-width: 640px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 1024px) {
+}
+@media only screen and (min-width: 1280px) {
+}
+@media only screen and (min-width: 1536px) {
+}

@@ -1,0 +1,106 @@
+// Variables
+$first_color: #fdf7f2;
+$second_color:#94B49F;
+$third_color:#DF7861;
+$fourth_color:#354259;
+$fifth_color: #576F72;
+
+//‌Imports
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400&display=swap');
+
+.posts_page{
+    margin-top: 20px;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    .post{
+        margin-bottom: 15px;
+        .post_release_date{
+            color: $fifth_color;
+        }
+        .post_title{
+            padding-left: 5px;
+            margin:5px 0;
+            a{
+                color: $third_color;
+                text-decoration: none;
+            }
+        }
+        .post_summary{
+            color: $fourth_color;
+            a{
+                color: $third_color;
+            }
+        }
+        &.fa{
+            text-align: right;
+            border-right: 2px solid $fifth_color;
+            .post_title{
+                padding-right: 5px;
+            }
+            .post_summary{
+                padding-right: 5px;
+            }
+        }
+        &.en{
+            padding: 4px 0;
+            border-left: 2px solid $fifth_color;
+            .post_title{
+                padding-left: 5px;
+            }
+            .post_summary{
+                padding-left: 5px;
+            }
+        }
+
+    }
+}
+.post_page{
+    font-family: 'Noto Sans Arabic', sans-serif;
+    .post_title{
+        color: $third_color;
+    }
+    .post_date{
+        color: $fifth_color;
+    }
+    .post_content{
+        color: $fourth_color;
+        h3{
+            color:$second_color;
+        }
+        ul{
+            margin-bottom: 15px;
+        }
+    }
+    &.fa{
+        text-align: right;
+        ul{
+            border-right: 2px solid $fifth_color;
+            li{
+                padding-right: 5px;
+            }
+        }
+    }
+    &.en{
+        text-align: left;
+        ul{
+            border-left: 2px solid $fifth_color;
+            li{
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
+
+//Media Queries
+@media only screen and (min-width: 0px) {
+}
+@media only screen and (min-width: 640px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 1024px) {
+}
+@media only screen and (min-width: 1280px) {
+}
+@media only screen and (min-width: 1536px) {
+}

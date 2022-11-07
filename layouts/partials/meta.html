@@ -4,3 +4,22 @@
 
 {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+{{/*  POST STYLESHEET  */}}
+{{ if .Page.Title | eq "Blog" }}
+    {{ $style := resources.Get "sass/pages/post_s_page.scss" | resources.ToCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}
+
+{{/*  Links STYLESHEET  */}}
+{{ if .Page.Title | eq "Links" }}
+    {{ $style := resources.Get "sass/pages/links_page.scss" | resources.ToCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}
+
+{{/*  Books STYLESHEET  */}}
+{{ if .Page.Title | eq "Books" }}
+    {{ $style := resources.Get "sass/pages/books_page.scss" | resources.ToCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}
+

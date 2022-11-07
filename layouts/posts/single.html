@@ -1,5 +1,20 @@
 {{ define "main" }}
-  <h1>{{ .Params.Title }}</h1>
-  <p>{{ .Date.Format "January 2, 2006" }}</p>
-  {{ .Content }}
+{{if .Params.Language | eq "fa"}}
+  <div class="post_page fa">
+    <h1 class="post_title"> [ {{ .Params.post_title }} ] </h1>
+    <p class="post_date">( {{ .Date.Format "January 2, 2006" }} )</p>
+    <div class="post_content">
+      {{ .Content }}
+    </div>
+  </div>
+{{else if .Params.Language | eq "en"}}
+  <div class="post_page en">
+    <h1 class="post_title"> [ {{ .Params.post_title }} ] </h1>
+    <p class="post_date">( {{ .Date.Format "January 2, 2006" }} )</p>
+    <div class="post_content">
+      {{ .Content }}
+    </div>
+  </div>
+{{end}}
+
 {{ end }}

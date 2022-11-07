@@ -5,6 +5,8 @@ $third_color:#DF7861;
 $fourth_color:#354259;
 $fifth_color: #576F72;
 
+//‌Imports
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400&display=swap');
 
 // Styles
 *{
@@ -76,127 +78,12 @@ header{
     }
 }
 
-.manga_list{
-    margin-top: 20px;
-    ul{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 10px;
-        row-gap: 10px;
+
+
+//Media Queries
+    // Temporarily FIX FOR SMALL SCREENS
+    @media only screen and (max-width: 1024px) {
     }
-    .manga{
-        color: $first_color;
-        width: 165px;
-        height: 360px;
-        border: 2px dashed $fifth_color;
-        border-radius: 6px;
-        padding: 5px;
-        font-size: small;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-        background-color: $second_color;
-        .manga_info{
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            .title{
-                color: $fourth_color;
-                font-size: large;
-                text-align: center;
-            }
-            a{
-                text-decoration: none;
-                text-align: center;
-                .more_link{
-                    width: 80px;
-                    margin-top: 4px;
-                    padding:0 10px;
-                    color: $fourth_color;
-                    border: 2px solid $fourth_color;
-                    &:hover{
-                        background-color: #fdf7f2;
-                    }
-                }
-            }
-            
-        }
-        .image{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img{
-                width: 120px;
-                height: 160px;
-            }
-        }
-        
-
-
-    }
-}
-.links_page{
-        margin-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        row-gap: 10px;
-        justify-content: space-between;
-        .links_section{        
-            a{
-                p{            
-                    width: 110px;
-                    height: 80px;
-                    border-left: 2px solid $fifth_color;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
-                }
-                color: $fifth_color;
-                text-decoration: none;
-                :hover{
-                    background-color: $second_color;
-                    color: $first_color;
-                }
-            }
-        }
-}
-.posts{
-    margin-top: 20px;
-    .post{
-        margin-bottom: 15px;
-        padding: 8px 0;
-        border-left: 2px solid $fifth_color;
-        .post_release_date{
-            color: $fifth_color;
-        }
-        .post_title{
-            padding-left: 5px;
-            margin:5px 0;
-            a{
-                color: $third_color;
-                text-decoration: none;
-            }
-        }
-        .post_summary{
-            padding-left: 5px;
-            color: $fourth_color;
-            a{
-                color: $third_color;
-            }
-        }
-    }
-}
-
-
-// Temporarily FIX FOR SMALL SCREENS
-@media only screen and (max-width: 1024px) {
-}
 
 
 @media only screen and (min-width: 0px) {

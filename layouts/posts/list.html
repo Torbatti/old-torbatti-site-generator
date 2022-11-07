@@ -1,20 +1,33 @@
 {{ define "main" }}
-  <div class="posts">
+  <div class="posts_page">
     <ul>
       {{ range .Pages }}
         <li>
-          <div class="post">
-            <div class="post_release_date">
-              -{{ .Date.Format "January 2, 2006" }}
+          {{if .Params.Language | eq "fa"}}
+            <div class="post fa">
+              <div class="post_release_date">
+                ({{ .Date.Format "2006 01 2" }}) -
+              </div>
+              <div class="post_title">
+                <a href="{{ .Permalink }}">[ {{ .Params.post_title  }} ]</a>
+              </div>
+              {{/*  <div class="post_summary">
+                <p>{{.Summary}} <a href="{{ .Permalink }}">Full Article</a></p>
+              </div>  */}}
             </div>
-            <div class="post_title">
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
+          {{else if .Params.Language | eq "en"}}
+            <div class="post en">
+              <div class="post_release_date">
+                - ( {{ .Date.Format "2006 01 2" }} )
+              </div>
+              <div class="post_title">
+                <a href="{{ .Permalink }}">[ {{ .Params.post_title }} ]</a>
+              </div>
+              {{/*  <div class="post_summary">
+                <p>{{.Summary}} <a href="{{ .Permalink }}">Full Article</a></p>
+              </div>  */}}
             </div>
-            <div class="post_summary">
-              <p>{{.Summary}} <a href="{{ .Permalink }}">Full Article</a></p>
-              
-            </div>
-          </div>
+          {{end}}
         </li>
       {{ end }}
     </ul>
