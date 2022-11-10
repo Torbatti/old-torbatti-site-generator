@@ -5,10 +5,17 @@ $third_color:#DF7861;
 $fourth_color:#354259;
 $fifth_color: #576F72;
 
-//‌Imports
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400&display=swap');
+
 
 .posts_page{
+    font-family: 'Noto Sans Arabic', sans-serif;
+
+    a{
+        @media only screen and (min-width: 0px) {font-size: 1.8rem; font-weight: bold;}
+        @media only screen and (min-width: 640px) {font-size: 1.8rem; font-weight: bold;}
+        @media only screen and (min-width: 1024px) {font-size:medium;font-weight: normal;}
+    }
+    
     margin-top: 20px;
     font-family: 'Noto Sans Arabic', sans-serif;
     .post{
@@ -32,7 +39,9 @@ $fifth_color: #576F72;
         }
         &.fa{
             text-align: right;
-            border-right: 2px solid $fifth_color;
+            @media only screen and (min-width: 0px) {border-right: 0.4rem solid $fifth_color;}
+            @media only screen and (min-width: 640px) {border-right: 0.4rem solid $fifth_color;}
+            @media only screen and (min-width: 1024px) {border-right: 2px solid $fifth_color;}
             .post_title{
                 padding-right: 5px;
             }
@@ -42,7 +51,10 @@ $fifth_color: #576F72;
         }
         &.en{
             padding: 4px 0;
-            border-left: 2px solid $fifth_color;
+
+            @media only screen and (min-width: 0px) {border-left: 0.4rem solid $fifth_color;}
+            @media only screen and (min-width: 640px) {border-left: 0.4rem solid $fifth_color;}
+            @media only screen and (min-width: 1024px) {border-left: 2px solid $fifth_color;}
             .post_title{
                 padding-left: 5px;
             }
@@ -90,17 +102,6 @@ $fifth_color: #576F72;
     }
 }
 
-
-//Media Queries
-@media only screen and (min-width: 0px) {
-}
-@media only screen and (min-width: 640px) {
-}
-@media only screen and (min-width: 768px) {
-}
-@media only screen and (min-width: 1024px) {
-}
-@media only screen and (min-width: 1280px) {
-}
-@media only screen and (min-width: 1536px) {
-}
+@media only screen and (min-width: 0px) {}
+@media only screen and (min-width: 640px) {}
+@media only screen and (min-width: 1024px) {}
